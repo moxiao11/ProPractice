@@ -1,6 +1,11 @@
-﻿- [课程首页](README.md)
+- [课程首页](README.md)
 - [课程介绍](README.md#课程介绍)
   - [课程信息](README.md#课程信息)
   - [学习建议](README.md#学习建议)
   - [课程安排](README.md#课程安排)
   - [评分参考](README.md#评分参考)
+- 知识文档
+  - [Git](assets/content/knowledge/git.md)
+  - [GitHub](assets/content/knowledge/github.md)
+  - [命令行](assets/content/knowledge/CIL.md)
+  - [Git Bash](assets/content/knowledge/bash.md)

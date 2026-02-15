@@ -1,0 +1,187 @@
+﻿body {
+  --sidebar-width: 286px;
+}
+
+:root {
+  --theme-color: #0ea5a4;
+  --theme-color-light: #2dd4bf;
+  --ink-strong: #0f172a;
+  --ink-soft: #334155;
+  --line-soft: #dbeafe;
+  --bg-main: #f8fbff;
+  --grad-a: #67e8f9;
+  --grad-b: #c4b5fd;
+  --grad-c: #f9a8d4;
+}
+
+body,
+.markdown-section {
+  font-family: "HarmonyOS Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--ink-soft);
+}
+
+body {
+  background:
+    radial-gradient(620px circle at 10% 6%, rgba(103, 232, 249, 0.2), transparent 56%),
+    radial-gradient(520px circle at 86% 12%, rgba(196, 181, 253, 0.2), transparent 58%),
+    radial-gradient(620px circle at 80% 84%, rgba(249, 168, 212, 0.16), transparent 62%),
+    var(--bg-main);
+}
+
+.app-name {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.app-name-link {
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  background: linear-gradient(120deg, #0ea5a4, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sidebar {
+  border-right: 1px solid var(--line-soft);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+.sidebar ul li a {
+  border-radius: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar ul li.active > a,
+.sidebar ul li a:hover {
+  background: rgba(14, 165, 164, 0.11);
+  color: #0f766e;
+  transform: translateX(3px);
+}
+
+.sidebar-toggle {
+  background: linear-gradient(135deg, #0ea5a4, #6366f1);
+}
+
+.content {
+  background: transparent;
+}
+
+.markdown-section {
+  max-width: 920px;
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3 {
+  color: var(--ink-strong);
+  letter-spacing: 0.2px;
+}
+
+.markdown-section h1 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.markdown-section h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--grad-a), var(--grad-b), var(--grad-c));
+}
+
+.markdown-section blockquote {
+  border-left: 5px solid var(--theme-color);
+  background: linear-gradient(135deg, rgba(14, 165, 164, 0.08), rgba(99, 102, 241, 0.08));
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+}
+
+.markdown-section code {
+  color: #be185d;
+  background: #fff1f2;
+}
+
+.markdown-section pre {
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.markdown-section table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.markdown-section th,
+.markdown-section td {
+  padding: 0.82rem 1rem;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.markdown-section th {
+  background: linear-gradient(135deg, #ecfeff, #eef2ff);
+  color: #0f172a;
+}
+
+.markdown-section tr:hover td {
+  background: #f8fafc;
+}
+
+.markdown-section a {
+  color: #0f766e;
+  border-bottom: 2px solid rgba(14, 165, 164, 0.24);
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.markdown-section a:hover {
+  color: #4338ca;
+  border-bottom-color: rgba(67, 56, 202, 0.42);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  background: linear-gradient(145deg, #0ea5a4, #6366f1);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.3);
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  transform: translateY(0) scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .markdown-section {
+    padding: 26px 20px 36px;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}

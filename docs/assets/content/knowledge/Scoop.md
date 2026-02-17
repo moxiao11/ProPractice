@@ -1,4 +1,4 @@
-﻿# Scoop 
+# Scoop 
 
 ### 为什么使用Scoop
 
@@ -22,3 +22,18 @@ irm get.scoop.sh -outfile 'install.ps1'
 
 
 同时scoop也有自己的[官方介绍文档](https://github.com/ScoopInstaller/Scoop)
+
+---
+
+<!-- NAV-CARDS:START -->
+<div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+  <a href="#/assets/content/knowledge/cmake.md" style="flex:1; min-width:220px; padding:12px 14px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none;">
+    <div style="font-size:12px; opacity:.7;">Previous</div>
+    <div><strong>CMake</strong></div>
+  </a>
+  <a href="#/assets/content/knowledge/git.md" style="flex:1; min-width:220px; padding:12px 14px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; text-align:right;">
+    <div style="font-size:12px; opacity:.7;">Next</div>
+    <div><strong>Git</strong></div>
+  </a>
+</div>
+<!-- NAV-CARDS:END -->

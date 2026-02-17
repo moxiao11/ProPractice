@@ -1,4 +1,4 @@
-﻿# github
+# github
 
 ### 是什么
 
@@ -58,3 +58,18 @@ github提交代码需要先搞秘钥，可以参考下面的文章,当然之前g
 ### by the end
 
 由于github上的项目良莠不齐，在这里推荐[hellogithub](https://hellogithub.com/)这个社区，有很多优质的开源项目整理。
+
+---
+
+<!-- NAV-CARDS:START -->
+<div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+  <a href="#/assets/content/knowledge/git.md" style="flex:1; min-width:220px; padding:12px 14px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none;">
+    <div style="font-size:12px; opacity:.7;">Previous</div>
+    <div><strong>Git</strong></div>
+  </a>
+  <a href="#/assets/content/knowledge/CIL.md" style="flex:1; min-width:220px; padding:12px 14px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; text-align:right;">
+    <div style="font-size:12px; opacity:.7;">Next</div>
+    <div><strong>CLI</strong></div>
+  </a>
+</div>
+<!-- NAV-CARDS:END -->

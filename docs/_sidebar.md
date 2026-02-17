@@ -9,3 +9,6 @@
   - [GitHub](assets/content/knowledge/github.md)
   - [命令行](assets/content/knowledge/CIL.md)
   - [Git Bash](assets/content/knowledge/bash.md)
+
+  - [Make](assets/content/knowledge/make.md)
+  - [Frontend](assets/content/knowledge/frontend.md)

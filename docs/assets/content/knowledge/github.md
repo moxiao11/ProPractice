@@ -54,3 +54,7 @@ github提交代码需要先搞秘钥，可以参考下面的文章,当然之前g
 [github提交代码](https://blog.csdn.net/weixin_46028455/article/details/157645389?ops_request_misc=&request_id=&biz_id=102&utm_term=github%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E9%85%8D%E7%BD%AE&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-157645389.142^v102^pc_search_result_base8&spm=1018.2226.3001.4187)
 
 提交之后你的仓库会有留存记录，以后的大部分代码工作也都会用到github，需要尽快熟悉操作流程
+
+### by the end
+
+由于github上的项目良莠不齐，在这里推荐[hellogithub](https://hellogithub.com/)这个社区，有很多优质的开源项目整理。

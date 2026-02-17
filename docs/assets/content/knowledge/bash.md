@@ -1,5 +1,7 @@
 # git Bash
 
+---
+
 ### bash是什么
 
 Bash（Bourne Again SHell）是一种常见的 命令行解释器（Shell），用于在操作系统中通过文本命令与系统进行交互。

@@ -12,3 +12,5 @@
 
   - [Make](assets/content/knowledge/make.md)
   - [Frontend](assets/content/knowledge/frontend.md)
+  - [CMake](assets/content/knowledge/cmake.md)
+  - [Scoop](assets/content/knowledge/Scoop.md)

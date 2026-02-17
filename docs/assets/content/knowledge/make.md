@@ -1,5 +1,7 @@
 # make 
 
+---
+
 不知道你是否还记得这条指令
 ```bash
 g++ main.cpp -o main
@@ -60,7 +62,7 @@ make
 ├── b.cpp
 ```
 
-写一个叫makefile
+写一个叫makefile的文件
 ```makefile
 app: main.cpp a.cpp b.cpp
 	g++ main.cpp a.cpp b.cpp -o app

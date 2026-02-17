@@ -1,6 +1,8 @@
 
 # git
 
+---
+
 ### 是什么
 
 Git 是一个分布式版本控制系统（Distributed Version Control System），用于跟踪文件变化、管理代码版本，并支持多人协作开发。
@@ -141,7 +143,7 @@ git restore --source=commitID 文件路径
 
 ---
 
-## 小结
+### 小结
 
 常用 Git 命令：
 

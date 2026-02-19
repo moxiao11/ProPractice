@@ -90,6 +90,10 @@ body::before {
   letter-spacing: 0.2px;
 }
 
+.markdown-section h3 {
+  color: #355b9a;
+}
+
 .markdown-section h1 {
   position: relative;
   display: inline-block;
@@ -118,8 +122,21 @@ body::before {
 .markdown-section li code,
 .markdown-section td code,
 .markdown-section blockquote code {
-  color: #be185d;
-  background: #fff1f2;
+  color: #1f3f74;
+  background: #eaf2ff;
+  border: 1px solid #c8dbfb;
+  border-radius: 6px;
+  padding: 0.12em 0.38em;
+}
+
+.markdown-section h1 code,
+.markdown-section h2 code,
+.markdown-section h3 code {
+  color: #1f3f74 !important;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
 }
 
 .markdown-section pre {

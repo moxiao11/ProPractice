@@ -1,14 +1,34 @@
-## 飞机大战任务清单
-
-
-### 建议完成顺序
+# 飞机大战任务清单
 
 
 
 
+- [飞机大战任务清单](#飞机大战任务清单)
+    - [碰撞检测](#碰撞检测)
+    - [玩家移动](#玩家移动)
+    - [子弹发射](#子弹发射)
+    - [子弹飞行](#子弹飞行)
+    - [敌机生成](#敌机生成)
+    - [敌机移动](#敌机移动)
+    - [子弹 vs 敌机](#子弹-vs-敌机)
+    - [敌机 vs 玩家](#敌机-vs-玩家)
+    - [清理失效实体](#清理失效实体)
+  - [扩展挑战](#扩展挑战)
+  
 
-<a id="task-checkCollision"></a>
-### 1. `checkCollision` - 碰撞检测
+建议完成顺序: 
+
+* `updatePlayerMovement 玩家移动`
+* `trySpawnBullet 子弹发射`
+* `updateBullets 子弹飞行`
+* `trySpawnEnemy 敌机生成`
+* `updateEnemies 敌机移动`
+* `checkCollision 碰撞检测`
+* `checkBulletEnemyCollision 子弹 vs 敌机`
+* `checkEnemyPlayerCollision 敌机 vs 玩家`
+* `removeInactiveEntities 清理失效实体`
+
+### 碰撞检测
 
 两个矩形碰撞的条件：在 x 轴和 y 轴都有重叠。
 
@@ -29,8 +49,8 @@
 
 ---
 
-<a id="task-updatePlayerMovement"></a>
-### 2. `updatePlayerMovement` - 玩家移动
+<a id="task-updateplayermovement"></a>
+### 玩家移动
 
 根据 `left`、`right` 更新 `state.player.position.x`，并限制在 `[halfW, CANVAS_WIDTH - halfW]` 内。使用常量 `PLAYER_SPEED`。
 
@@ -45,8 +65,8 @@
 
 ---
 
-<a id="task-trySpawnBullet"></a>
-### 3. `trySpawnBullet` - 子弹发射
+<a id="task-tryspawnbullet"></a>
+### 子弹发射
 
 `state.fireCooldown -= dt`；当 `fire` 为 true 且 `fireCooldown <= 0` 时，在玩家正上方创建新子弹加入 `state.bullets`，并设置 `fireCooldown = 0.15f`。
 
@@ -61,8 +81,8 @@
 
 ---
 
-<a id="task-updateBullets"></a>
-### 4. `updateBullets` - 子弹飞行
+<a id="task-updatebullets"></a>
+### 子弹飞行
 
 遍历 `state.bullets`，更新 `y += speedY * dt`，飞出屏幕（y < -BULLET_HEIGHT）则 `active = false`。
 
@@ -77,8 +97,8 @@
 
 ---
 
-<a id="task-trySpawnEnemy"></a>
-### 5. `trySpawnEnemy` - 敌机生成
+<a id="task-tryspawnenemy"></a>
+### 敌机生成
 
 `state.enemySpawnTimer += dt`；达到 `ENEMY_SPAWN_INTERVAL` 时重置计时器，在顶部（y = -ENEMY_HEIGHT）随机 x 创建敌机。
 
@@ -93,8 +113,8 @@
 
 ---
 
-<a id="task-updateEnemies"></a>
-### 6. `updateEnemies` - 敌机移动
+<a id="task-updateenemies"></a>
+### 敌机移动
 
 遍历 `state.enemies`，更新 `y += speedY * dt`，飞出屏幕则 `active = false`。
 
@@ -109,8 +129,8 @@
 
 ---
 
-<a id="task-checkBulletEnemyCollision"></a>
-### 7. `checkBulletEnemyCollision` - 子弹 vs 敌机
+<a id="task-checkbulletenemycollision"></a>
+### 子弹 vs 敌机
 
 遍历子弹和敌机，调用 `checkCollision`，碰撞则 `b.active = e.active = false`，`state.score += 10`。
 
@@ -125,8 +145,8 @@
 
 ---
 
-<a id="task-checkEnemyPlayerCollision"></a>
-### 8. `checkEnemyPlayerCollision` - 敌机 vs 玩家
+<a id="task-checkenemyplayercollision"></a>
+### 敌机 vs 玩家
 
 检测敌机与玩家碰撞，碰撞则 `e.active = false`，`lives--`，若 `lives <= 0` 则 `gameOver = true`。
 
@@ -141,8 +161,8 @@
 
 ---
 
-<a id="task-removeInactiveEntities"></a>
-### 9. `removeInactiveEntities` - 清理失效实体
+<a id="task-removeinactiveentities"></a>
+### 清理失效实体
 
 将 `active = false` 的子弹和敌机从 vector 中移除（可用 `std::remove_if` + `erase`）。
 

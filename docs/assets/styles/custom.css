@@ -112,10 +112,121 @@ body::before {
 }
 
 .markdown-section blockquote {
-  border-left: 5px solid var(--theme-color);
-  background: linear-gradient(135deg, rgba(95, 133, 201, 0.12), rgba(243, 248, 255, 0.95));
-  padding: 1rem 1.1rem;
-  border-radius: 12px;
+  position: relative;
+  border-left: 6px solid #4a78b6;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.92), rgba(239, 245, 255, 0.96)),
+    radial-gradient(900px circle at 12% 20%, rgba(74, 120, 182, 0.2), rgba(74, 120, 182, 0) 55%);
+  padding: 1.15rem 1.4rem 1.1rem;
+  border-radius: 14px;
+  color: #2f3f5a;
+  box-shadow: 0 16px 36px rgba(45, 76, 122, 0.18);
+}
+
+.markdown-section blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -18px;
+  left: 14px;
+  font-size: 42px;
+  color: rgba(74, 120, 182, 0.55);
+}
+
+.markdown-section blockquote::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 10px;
+  border: 1px dashed rgba(74, 120, 182, 0.25);
+  pointer-events: none;
+}
+
+.callout-quote {
+  position: relative;
+  margin: 1.4rem 0;
+  padding: 1.35rem 1.7rem 1.25rem;
+  border-radius: 18px;
+  border: 2px solid rgba(79, 117, 184, 0.7);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(240, 248, 255, 0.95)),
+    radial-gradient(900px circle at 18% 0%, rgba(159, 192, 238, 0.45), rgba(159, 192, 238, 0) 48%);
+  box-shadow:
+    0 22px 44px rgba(40, 64, 110, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+  color: #20345d;
+  font-size: 1.12rem;
+  line-height: 1.85;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.callout-quote::before {
+  content: "“";
+  position: absolute;
+  top: -24px;
+  left: 14px;
+  font-size: 52px;
+  color: rgba(79, 117, 184, 0.75);
+}
+
+.callout-quote::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 14px;
+  border: 1px dashed rgba(79, 117, 184, 0.35);
+  pointer-events: none;
+}
+
+.poem-card {
+  position: relative;
+  margin: 1.6rem 0;
+  padding: 1.6rem 1.8rem 1.4rem;
+  border-radius: 18px;
+  border: 1px solid rgba(95, 133, 201, 0.3);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.96), rgba(240, 248, 255, 0.92)),
+    radial-gradient(900px circle at 85% 15%, rgba(201, 173, 122, 0.25), rgba(201, 173, 122, 0) 50%);
+  box-shadow:
+    0 18px 36px rgba(49, 76, 126, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  color: #20345d;
+  overflow: hidden;
+}
+
+.poem-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 14px;
+  border: 1px dashed rgba(79, 117, 184, 0.28);
+  pointer-events: none;
+}
+
+.poem-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.18rem;
+  text-transform: none;
+  color: #2a4b85;
+}
+
+.poem-lines {
+  margin: 0.3rem 0 0.8rem;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  color: #20345d;
+}
+
+.poem-author {
+  margin: 0;
+  text-align: right;
+  font-size: 0.95rem;
+  color: #4b72b5;
+  font-weight: 600;
 }
 
 .markdown-section p code,

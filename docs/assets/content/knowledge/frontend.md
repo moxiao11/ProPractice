@@ -17,6 +17,14 @@
 * css 用于美化你的网页，带了色彩
 * js用于实现按下这个按钮有了跳转功能
 
+
+如果你只是想要简单的学习一点非常基础的web知识，那么MIT这个学生的知识分享课，一定很适合你，为期四周的课里面这应该是性价比最高的了:
+
+[MIT Web Development Crash Course](https://site.weblab.is/)
+
+
+
+
 ---
 
 <!-- NAV-CARDS:START -->

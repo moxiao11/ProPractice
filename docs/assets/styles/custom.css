@@ -353,3 +353,100 @@ body::before {
     bottom: 16px;
   }
 }
+
+.bulletin-board {
+  margin: 1rem 0 1.6rem;
+}
+
+.bulletin-hero {
+  position: relative;
+  padding: 1.3rem 1.35rem 1.15rem;
+  border-radius: 18px;
+  border: 1px solid rgba(95, 133, 201, 0.28);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(239, 247, 255, 0.93)),
+    radial-gradient(800px circle at 95% 8%, rgba(159, 192, 238, 0.35), rgba(159, 192, 238, 0) 52%);
+  box-shadow: 0 18px 38px rgba(49, 76, 126, 0.12);
+}
+
+.bulletin-badge {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  padding: 0.18rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(95, 133, 201, 0.12);
+  border: 1px solid rgba(95, 133, 201, 0.2);
+  color: #355b9a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.bulletin-hero h2 {
+  margin: 0 0 0.45rem;
+  color: #20345d;
+}
+
+.bulletin-hero p {
+  margin: 0;
+  color: #42597f;
+}
+
+.bulletin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.bulletin-card {
+  position: relative;
+  padding: 1rem 1.05rem 0.9rem;
+  border-radius: 16px;
+  border: 1px solid rgba(95, 133, 201, 0.2);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.96), rgba(244, 249, 255, 0.94)),
+    radial-gradient(900px circle at 0% 0%, rgba(111, 149, 211, 0.08), rgba(111, 149, 211, 0) 48%);
+  box-shadow: 0 12px 28px rgba(40, 64, 110, 0.08);
+}
+
+.bulletin-card h3 {
+  margin: 0 0 0.6rem;
+  color: #294b84;
+  font-size: 1.02rem;
+}
+
+.bulletin-card p,
+.bulletin-card li {
+  color: #334a72;
+}
+
+.bulletin-card ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.bulletin-card li + li {
+  margin-top: 0.35rem;
+}
+
+.bulletin-card--important {
+  border-color: rgba(201, 173, 122, 0.38);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 239, 0.94)),
+    radial-gradient(900px circle at 100% 0%, rgba(201, 173, 122, 0.18), rgba(201, 173, 122, 0) 52%);
+}
+
+.bulletin-card--important h3 {
+  color: #7d5b20;
+}
+
+@media (max-width: 760px) {
+  .bulletin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bulletin-hero {
+    padding: 1.05rem 1rem 0.95rem;
+  }
+}

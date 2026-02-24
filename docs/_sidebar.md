@@ -1,4 +1,5 @@
 ﻿- [课程首页](README.md)
+- [公告栏](bulletin-board.md)
 - [课程介绍](README.md#课程介绍)
   - [课程信息](README.md#课程信息)
   - [学习建议](README.md#学习建议)
@@ -13,8 +14,14 @@
   - [Make](assets/content/knowledge/make.md)
   - [Frontend](assets/content/knowledge/frontend.md)
   - [CMake](assets/content/knowledge/cmake.md)
+  - [MinGW](assets/content/knowledge/mingw.md)
   - [g++](assets/content/knowledge/g++.md)
+
   - [Scoop](assets/content/knowledge/Scoop.md)
+- 实验文档
+  - [实验概览](assets/content/lab/实验概览.md)
+  - [写在前面](assets/content/lab/写在前面.md)
+  - [C++ Reference](assets/content/lab/C++reference.md)
 
 - 项目文档
   - [飞机大战总览](assets/content/project/FlyBattle/FlyBattle.md)

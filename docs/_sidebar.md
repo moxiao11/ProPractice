@@ -16,7 +16,7 @@
   - [CMake](assets/content/knowledge/cmake.md)
   - [MinGW](assets/content/knowledge/mingw.md)
   - [g++](assets/content/knowledge/g++.md)
-
+  - [GUI](assets/content/knowledge/GUI.md)
   - [Scoop](assets/content/knowledge/Scoop.md)
 - 实验文档
   - [实验概览](assets/content/lab/实验概览.md)

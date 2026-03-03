@@ -12,22 +12,21 @@
   <article class="bulletin-card bulletin-card--important">
    <h3>置顶提醒</h3>
    <ul>
-    <li>提交作业前请确认代码可运行、文件结构完整。</li>
-    <li>实验文档更新后，以文档最新版本为准。</li>
-    <li>遇到环境问题，先查看知识文档中的安装与编译说明。</li>
+
+    <li> 本学期上课地点同上学期，请同学们按时上课 </li>
+    <li> 课堂会详细介绍课程内容，如有疑惑还请询问助教 </li>
+    <li> 遇到环境问题，先查看知识文档中的安装与编译说明。</li>
    </ul>
   </article>
   <article class="bulletin-card">
    <h3>本周安排</h3>
-   <p><strong>课堂内容：</strong>根据课程进度填写</p>
-   <p><strong>实验任务：</strong>根据课程进度填写</p>
-   <p><strong>截止时间：</strong>待发布</p>
+   <p><strong>课堂内容：</strong> 介绍课程安排</p>
+   <p><strong>实验任务：</strong> 完成专项一</p>
+   <p><strong>截止时间：</strong> 待发布 </p>
   </article>
   <article class="bulletin-card">
    <h3>实验提示</h3>
-   <p>飞机大战实验建议优先完成基础逻辑，再做扩展功能。</p>
-   <p>如果涉及 `vector` 清理失效元素，可参考：</p>
-   <p><a href="#/assets/content/knowledge/cpp-reference.md">C++ Reference（vector 速查表）</a></p>
+   <p> 实验部分会逐步更新有关速查表在文档中 </p>
   </article>
   <article class="bulletin-card">
    <h3>发布记录模板</h3>

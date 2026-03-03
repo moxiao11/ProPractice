@@ -8,7 +8,7 @@
 - 知识文档
   - [Git](assets/content/knowledge/git.md)
   - [GitHub](assets/content/knowledge/github.md)
-  - [命令行](assets/content/knowledge/CIL.md)
+  - [命令行](assets/content/knowledge/CLI.md)
   - [Git Bash](assets/content/knowledge/bash.md)
 
   - [Make](assets/content/knowledge/make.md)

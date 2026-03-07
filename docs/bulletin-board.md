@@ -12,7 +12,6 @@
   <article class="bulletin-card bulletin-card--important">
    <h3>置顶提醒</h3>
    <ul>
-
     <li> 本学期上课地点同上学期，请同学们按时上课 </li>
     <li> 课堂会详细介绍课程内容，如有疑惑还请询问助教 </li>
     <li> 遇到环境问题，先查看知识文档中的安装与编译说明。</li>
@@ -31,7 +30,7 @@
   <article class="bulletin-card">
    <h3>发布记录模板</h3>
    <ul>
-    <li><strong>[YYYY-MM-DD]</strong> 公告标题（填写内容）</li>
+    <li><strong> 2026/3/4</strong> 修改课程评分和课程作业 </li>
     <li><strong>[YYYY-MM-DD]</strong> 公告标题（填写内容）</li>
     <li><strong>[YYYY-MM-DD]</strong> 公告标题（填写内容）</li>
    </ul>

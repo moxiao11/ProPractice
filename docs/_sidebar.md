@@ -21,7 +21,8 @@
 - 实验文档
   - [实验概览](assets/content/lab/实验概览.md)
   - [写在前面](assets/content/lab/写在前面.md)
-  - [C++ Reference](assets/content/lab/C++reference.md)
+  - [Vector Reference](assets/content/lab/vector.md)
+  - [String Reference](assets/content/lab/string.md)
 
 - 项目文档
   - [飞机大战总览](assets/content/project/FlyBattle/FlyBattle.md)

@@ -21,6 +21,7 @@
 - 实验文档
   - [实验概览](assets/content/lab/实验概览.md)
   - [写在前面](assets/content/lab/写在前面.md)
+  - [专项知识点](assets/content/lab/专项知识点.md)
   - [Vector Reference](assets/content/lab/vector.md)
   - [String Reference](assets/content/lab/string.md)
 

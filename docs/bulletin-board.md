@@ -31,7 +31,7 @@
    <h3>发布记录模板</h3>
    <ul>
     <li><strong> 2026/3/4</strong> 修改课程评分和课程作业 </li>
-    <li><strong>[YYYY-MM-DD]</strong> 公告标题（填写内容）</li>
+    <li><strong>2026/3/7</strong>string速查表</li>
     <li><strong>[YYYY-MM-DD]</strong> 公告标题（填写内容）</li>
    </ul>
   </article>

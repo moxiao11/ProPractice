@@ -20,7 +20,7 @@
   <article class="bulletin-card">
    <h3>本周安排</h3>
    <p><strong>课堂内容：</strong> 介绍课程安排</p>
-   <p><strong>实验任务：</strong> 完成专项一</p>
+   <p><strong>实验任务：</strong> 完成专项二</p>
    <p><strong>截止时间：</strong> 待发布 </p>
   </article>
   <article class="bulletin-card">
@@ -32,7 +32,7 @@
    <ul>
     <li><strong> 2026/3/4</strong> 修改课程评分和课程作业 </li>
     <li><strong>2026/3/7</strong>string速查表</li>
-    <li><strong>[YYYY-MM-DD]</strong> 公告标题（填写内容）</li>
+    <li><strong> 2026/3/12 </strong> 修改文档架构 </li>
    </ul>
   </article>
  </section>

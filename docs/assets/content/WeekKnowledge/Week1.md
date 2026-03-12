@@ -118,12 +118,15 @@ int main()
 
 
 有关中位数的其实挺多，但是如果遇到
-
-$\left|x - x_0\right| + \left|y - y_0\right| + \left|z - z_0\right|$
+$$
+\left|x - x_0\right| + \left|y - y_0\right| + \left|z - z_0\right|
+$$
 
 然后求
 
-$\sum \left|x_i - x_0\right| + \sum \left|y_i - y_0\right| + \sum \left|z_i - z_0\right|$
+$$
+\sum \left|x_i - x_0\right| + \sum \left|y_i - y_0\right| + \sum \left|z_i - z_0\right|
+$$
 
 这样大概率是求中位数
 

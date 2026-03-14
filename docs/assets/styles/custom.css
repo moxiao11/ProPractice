@@ -251,14 +251,69 @@ body::before {
 }
 
 .markdown-section pre {
-  background: #eef5ff;
+  background: #f6faff;
+  border: 1px solid #d4e3fb;
   border-radius: 14px;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
 .markdown-section pre code {
   background: transparent;
-  color: #3f3f3f;
+  color: #243b5a;
+  text-shadow: none;
+}
+
+.markdown-section pre code .token.comment,
+.markdown-section pre code .token.prolog,
+.markdown-section pre code .token.doctype,
+.markdown-section pre code .token.cdata {
+  color: #6b7280;
+}
+
+.markdown-section pre code .token.punctuation {
+  color: #4b5563;
+}
+
+.markdown-section pre code .token.property,
+.markdown-section pre code .token.tag,
+.markdown-section pre code .token.boolean,
+.markdown-section pre code .token.number,
+.markdown-section pre code .token.constant,
+.markdown-section pre code .token.symbol,
+.markdown-section pre code .token.deleted {
+  color: #b45309;
+}
+
+.markdown-section pre code .token.selector,
+.markdown-section pre code .token.attr-name,
+.markdown-section pre code .token.string,
+.markdown-section pre code .token.char,
+.markdown-section pre code .token.builtin,
+.markdown-section pre code .token.inserted {
+  color: #0f766e;
+}
+
+.markdown-section pre code .token.operator,
+.markdown-section pre code .token.entity,
+.markdown-section pre code .token.url {
+  color: #334155;
+}
+
+.markdown-section pre code .token.atrule,
+.markdown-section pre code .token.attr-value,
+.markdown-section pre code .token.keyword {
+  color: #7c3aed;
+}
+
+.markdown-section pre code .token.function,
+.markdown-section pre code .token.class-name {
+  color: #1d4ed8;
+}
+
+.markdown-section pre code .token.regex,
+.markdown-section pre code .token.important,
+.markdown-section pre code .token.variable {
+  color: #be185d;
 }
 
 .docsify-copy-code-button {

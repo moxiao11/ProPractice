@@ -8,7 +8,7 @@
   <meta name="description" content="程序设计实践课程：通过实验与项目掌握编程能力">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="./assets/styles/custom.css">
+  <link rel="stylesheet" href="./assets/styles/custom.css?v=20260314b">
 </head>
 <body>
   <div id="app"></div>
@@ -53,7 +53,17 @@
       },
       plugins: [
         function (hook) {
+          hook.beforeEach(function (content) {
+            return content
+              .replace(/```[ \t]*C\+\+/g, '```cpp')
+              .replace(/```[ \t]*c\+\+/g, '```cpp')
+              .replace(/```[ \t]*Powershell/g, '```powershell');
+          });
+
           hook.doneEach(function () {
+            if (window.Prism && typeof window.Prism.highlightAll === 'function') {
+              window.Prism.highlightAll();
+            }
             if (window.MathJax && window.MathJax.typesetPromise) {
               window.MathJax.typesetPromise();
             }
@@ -69,7 +79,20 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script src="./assets/scripts/course.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-clike.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-powershell.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-makefile.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-batch.min.js"></script>
+  <script>
+    if (window.Prism && window.Prism.languages && window.Prism.languages.cpp) {
+      window.Prism.languages['c++'] = window.Prism.languages.cpp;
+      window.Prism.languages['C++'] = window.Prism.languages.cpp;
+    }
+  </script>
+  <script src="./assets/scripts/course.js?v=20260314b"></script>
 </body>
 </html>
 

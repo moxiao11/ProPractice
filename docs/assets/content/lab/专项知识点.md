@@ -135,3 +135,186 @@ $$
 分别把所有的 x、y、z 存起来，找x , y , z中位数，分别计算曼哈顿距离，然后求最小值
 
 [曼哈顿距离之和最小](https://blog.csdn.net/nka_kun/article/details/83239539)
+
+
+# 数组的循环移动
+
+数组实现循环移动有很多种办法:
+
+1. 单开一个新的数组
+   
+通过开一个数组B，然后通过取模的方式来进行存放，给出移动的位置变化，可以自行推导一下
+``` C++
+(i + k) % n  // 右移
+(i - k + n )% n // 左移动
+```
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[] = {1, 2, 3, 4, 5};
+    int n = 5, k = 2;
+    int b[5];
+
+    k %= n;
+    for (int i = 0; i < n; i++) {
+        b[(i + k) % n] = a[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << b[i] << " ";
+    }
+    return 0;
+}
+```
+
+2. 原地移动(好像某些企业面试题就喜欢这么让你原地进行一些操作)
+   
+“原地移动”就是：不借助另一个同样大的数组，直接在原数组上完成循环移动。
+
+数组循环移动最经典的原地做法是三次翻转。
+
+右移： 
+```C++
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void rotateRight(int a[], int n, int k) {
+    k %= n;
+    reverse(a, a + n);         // 整体翻转
+    reverse(a, a + k);         // 翻转前 k 个
+    reverse(a + k, a + n);     // 翻转后 n-k 个
+}
+
+int main() {
+    int a[] = {1, 2, 3, 4, 5, 6, 7};
+    int n = 7;
+    int k = 3;
+
+    rotateRight(a, n, k);
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    return 0;
+}
+```
+左移:
+```C++
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void rotateLeft(int a[], int n, int k) {
+    k %= n;
+    reverse(a, a + k);
+    reverse(a + k, a + n);
+    reverse(a, a + n);
+}
+
+int main() {
+    int a[] = {1, 2, 3, 4, 5, 6, 7};
+    int n = 7;
+    int k = 3;
+
+    rotateLeft(a, n, k);
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    return 0;
+}
+```
+
+
+设原数组为：
+
+$$
+[a_1, a_2, \dots, a_{n-k}, a_{n-k+1}, \dots, a_n]
+$$
+
+把它分成两段：
+
+- 前一段  
+  $$
+  A = [a_1, a_2, \dots, a_{n-k}]
+  $$
+
+- 后一段  
+  $$
+  B = [a_{n-k+1}, \dots, a_n]
+  $$
+
+那么数组右循环移动 k 位后的结果应该是：
+
+$$
+[B, A]
+$$
+
+也就是：
+
+$$
+[a_{n-k+1}, \dots, a_n, a_1, \dots, a_{n-k}]
+$$
+
+---
+
+## 三次翻转算法
+
+对原数组[A, B] 做三步：
+
+1. 整体翻转
+
+$$
+[A, B] \to [B^R, A^R]
+$$
+
+2. 翻转前 k 个元素
+
+$$
+[B^R, A^R] \to [B, A^R]
+$$
+
+3. 翻转后 n-k 个元素
+
+$$
+[B, A^R] \to [B, A]
+$$
+
+最后正好得到右移 k 位后的结果。左移动同理
+
+
+3. rotate函数
+   
+> 当你觉得太麻烦的时候，不如看看C++库里
+
+* rotate(first, middle, last);
+  
+把区间 [first, last) 重新排列，使 middle 成为新区间的第一个位置。也就是：
+
+[first, middle) + [middle, last) => [first, middle) + [middle, last)
+
+左移代码如下:
+
+```C++
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int a[] = {1, 2, 3, 4, 5};
+    int n = 5, k = 2;
+
+    rotate(a, a + k, a + n);
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    return 0;
+}
+```
+
+右移 k 位，等价于左移 n-k 位：可以自行尝试

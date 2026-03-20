@@ -353,7 +353,12 @@
       if (/^https?:\/\//i.test(path)) return path;
       const marker = '/assets/content/3D/';
       const idx = window.location.pathname.indexOf(marker);
-      const basePrefix = idx >= 0 ? window.location.pathname.slice(0, idx) : '';
+      let basePrefix = idx >= 0 ? window.location.pathname.slice(0, idx) : '';
+      // Fallback for GitHub Pages project sites, e.g. /repo/#/...
+      if (!basePrefix && /\.github\.io$/i.test(window.location.hostname)) {
+        const parts = window.location.pathname.split('/').filter(Boolean);
+        if (parts.length > 0) basePrefix = `/${parts[0]}`;
+      }
       const normalized = path.startsWith('/') ? path : `/${path}`;
       return `${basePrefix}${normalized}`;
     }

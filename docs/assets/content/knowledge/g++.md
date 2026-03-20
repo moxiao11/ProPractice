@@ -1,6 +1,6 @@
 ﻿# g++ 
 
-<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
+<a href="../3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 ### 是什么
 
@@ -90,5 +90,6 @@ g++ main.cpp utils.cpp \
     -std=c++17 -O2 -Wall -Wextra \
     -Iinclude -Llib -lm \
     -o main
+
 
 

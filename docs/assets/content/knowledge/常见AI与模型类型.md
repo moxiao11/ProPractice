@@ -1,6 +1,6 @@
 ﻿## 目录
 
-<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
+<a href="../3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 1. [常用人工智能](#常用人工智能)
 2. [常见AI模型类型](#常见ai模型类型)
@@ -186,6 +186,7 @@ GPT-4，DeepSeek V3都使用了这项技术。实现高性能而节省算力。
 VLM结合了视觉和语言处理能力，能够实现图像与文本的跨模态理解。它被广泛应用于多模态助手、图像描述、视觉问答和AR/VR等领域。AI识图搜题就用了这个模型。
 ##  小型语言模型（SLM） 
 SLM是参数较少的语言模型，适合在本地部署。
+
 
 
 

@@ -1,4 +1,4 @@
-﻿<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
+﻿<a href="../3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 #Markdown 语法教学
 
@@ -45,5 +45,6 @@ One、iA Writer 等。
 ```text
 [名字](链接)
 ```
+
 
 

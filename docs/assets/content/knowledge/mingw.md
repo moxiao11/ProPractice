@@ -1,6 +1,6 @@
 ﻿# Mingw 
 
-<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
+<a href="../3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 ### 什么是mingw
 
@@ -21,5 +21,6 @@ Visual Studio 用MSVC 编译器
 * 标准 C / C++ 运行库
 
 * 能直接生成 Windows .exe 程序
+
 
 

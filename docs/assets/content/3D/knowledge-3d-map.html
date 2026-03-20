@@ -181,7 +181,7 @@
       <div class="card">
         <h2 id="n-title">点击任意节点</h2>
         <p id="n-desc">将显示该节点说明及其在知识网络中的角色。</p>
-        <a id="n-link" class="open" href="../knowledge/算法复杂度.md" target="_blank" rel="noopener noreferrer">打开文档</a>
+        <a id="n-link" class="open" href="/assets/content/knowledge/算法复杂度.md" target="_blank" rel="noopener noreferrer">打开文档</a>
       </div>
 
       <div class="card">
@@ -228,28 +228,28 @@
     };
 
     const nodes = [
-      { id: 'Knowledge 图谱中心', group: 'hub', desc: '聚合全部 knowledge 文档，形成一张可探索的课程知识网络。', link: '../../../README.md', fx: 0, fy: 0, fz: 0 },
+      { id: 'Knowledge 图谱中心', group: 'hub', desc: '聚合全部 knowledge 文档，形成一张可探索的课程知识网络。', link: '/README.md', fx: 0, fy: 0, fz: 0 },
 
       { id: '命令行类', group: 'anchor', desc: '以命令行交互为核心，强调终端、Shell 与命令执行。', fx: -210, fy: 80, fz: 70 },
       { id: '工具类', group: 'anchor', desc: '工程开发链路中的核心工具与构建体系。', fx: 220, fy: 70, fz: -80 },
       { id: '知识概念类', group: 'anchor', desc: '抽象知识、方法论与跨领域理解。', fx: 0, fy: -220, fz: 120 },
 
-      { id: 'CLI', group: 'cmd', desc: '命令行基础：通过文本命令控制系统。', link: '../knowledge/CLI.md', x: -280, y: 125, z: 70 },
-      { id: 'git Bash', group: 'cmd', desc: '常用 Shell 环境，命令行操作入口。', link: '../knowledge/bash.md', x: -250, y: 35, z: 125 },
+      { id: 'CLI', group: 'cmd', desc: '命令行基础：通过文本命令控制系统。', link: '/assets/content/knowledge/CLI.md', x: -280, y: 125, z: 70 },
+      { id: 'git Bash', group: 'cmd', desc: '常用 Shell 环境，命令行操作入口。', link: '/assets/content/knowledge/bash.md', x: -250, y: 35, z: 125 },
 
-      { id: 'Git', group: 'tool', desc: '分布式版本控制系统，管理代码历史。', link: '../knowledge/git.md', x: 170, y: 150, z: -60 },
-      { id: 'GitHub', group: 'tool', desc: '基于 Git 的协作与托管平台。', link: '../knowledge/github.md', x: 280, y: 108, z: -40 },
-      { id: 'Make', group: 'tool', desc: '以规则驱动的自动化构建工具。', link: '../knowledge/make.md', x: 150, y: 15, z: -145 },
-      { id: 'CMake', group: 'tool', desc: '跨平台构建配置生成工具。', link: '../knowledge/cmake.md', x: 260, y: 10, z: -120 },
-      { id: 'g++', group: 'tool', desc: 'C++ 编译器，负责把源码编译成可执行文件。', link: '../knowledge/g++.md', x: 242, y: 68, z: -190 },
-      { id: 'MinGW', group: 'tool', desc: 'Windows 下 GCC 工具链来源。', link: '../knowledge/mingw.md', x: 198, y: -55, z: -162 },
-      { id: 'Scoop', group: 'tool', desc: 'Windows 命令行包管理器。', link: '../knowledge/Scoop.md', x: 332, y: 50, z: -118 },
+      { id: 'Git', group: 'tool', desc: '分布式版本控制系统，管理代码历史。', link: '/assets/content/knowledge/git.md', x: 170, y: 150, z: -60 },
+      { id: 'GitHub', group: 'tool', desc: '基于 Git 的协作与托管平台。', link: '/assets/content/knowledge/github.md', x: 280, y: 108, z: -40 },
+      { id: 'Make', group: 'tool', desc: '以规则驱动的自动化构建工具。', link: '/assets/content/knowledge/make.md', x: 150, y: 15, z: -145 },
+      { id: 'CMake', group: 'tool', desc: '跨平台构建配置生成工具。', link: '/assets/content/knowledge/cmake.md', x: 260, y: 10, z: -120 },
+      { id: 'g++', group: 'tool', desc: 'C++ 编译器，负责把源码编译成可执行文件。', link: '/assets/content/knowledge/g++.md', x: 242, y: 68, z: -190 },
+      { id: 'MinGW', group: 'tool', desc: 'Windows 下 GCC 工具链来源。', link: '/assets/content/knowledge/mingw.md', x: 198, y: -55, z: -162 },
+      { id: 'Scoop', group: 'tool', desc: 'Windows 命令行包管理器。', link: '/assets/content/knowledge/Scoop.md', x: 332, y: 50, z: -118 },
 
-      { id: '前端', group: 'concept', desc: '用户可见可交互的网页界面能力。', link: '../knowledge/frontend.md', x: -28, y: -258, z: 178 },
-      { id: 'GUI', group: 'concept', desc: '图形界面交互方式，与 CLI 互补。', link: '../knowledge/GUI.md', x: 86, y: -172, z: 142 },
-      { id: 'Markdown 语法', group: 'concept', desc: '文档表达与知识沉淀的基础语言。', link: '../knowledge/如何写markdown.md', x: -122, y: -168, z: 106 },
-      { id: '常见AI与模型类型', group: 'concept', desc: 'AI 工具与模型认知，连接开发新范式。', link: '../knowledge/常见AI与模型类型.md', x: 88, y: -296, z: 74 },
-      { id: '算法复杂度', group: 'concept', desc: '时间复杂度与性能思维，支撑算法与工程决策。', link: '../knowledge/算法复杂度.md', x: -118, y: -296, z: 62 }
+      { id: '前端', group: 'concept', desc: '用户可见可交互的网页界面能力。', link: '/assets/content/knowledge/frontend.md', x: -28, y: -258, z: 178 },
+      { id: 'GUI', group: 'concept', desc: '图形界面交互方式，与 CLI 互补。', link: '/assets/content/knowledge/GUI.md', x: 86, y: -172, z: 142 },
+      { id: 'Markdown 语法', group: 'concept', desc: '文档表达与知识沉淀的基础语言。', link: '/assets/content/knowledge/如何写markdown.md', x: -122, y: -168, z: 106 },
+      { id: '常见AI与模型类型', group: 'concept', desc: 'AI 工具与模型认知，连接开发新范式。', link: '/assets/content/knowledge/常见AI与模型类型.md', x: 88, y: -296, z: 74 },
+      { id: '算法复杂度', group: 'concept', desc: '时间复杂度与性能思维，支撑算法与工程决策。', link: '/assets/content/knowledge/算法复杂度.md', x: -118, y: -296, z: 62 }
     ];
 
     const links = [
@@ -348,11 +348,21 @@
     const descEl = document.getElementById('n-desc');
     const linkEl = document.getElementById('n-link');
 
+    function toSiteUrl(path) {
+      if (!path) return path;
+      if (/^https?:\/\//i.test(path)) return path;
+      const marker = '/assets/content/3D/';
+      const idx = window.location.pathname.indexOf(marker);
+      const basePrefix = idx >= 0 ? window.location.pathname.slice(0, idx) : '';
+      const normalized = path.startsWith('/') ? path : `/${path}`;
+      return `${basePrefix}${normalized}`;
+    }
+
     function showNode(n) {
       titleEl.textContent = n.id;
       descEl.textContent = n.desc || '暂无详细说明。';
       if (n.link) {
-        linkEl.href = n.link;
+        linkEl.href = toSiteUrl(n.link);
         linkEl.style.display = 'inline-block';
       } else {
         linkEl.style.display = 'none';
@@ -379,5 +389,6 @@
   </script>
 </body>
 </html>
+
 
 

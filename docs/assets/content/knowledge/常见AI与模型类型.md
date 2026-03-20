@@ -5,9 +5,9 @@
 
 推荐一下[李宏毅老师的课](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php),如果你不是专门研究这个方向的，可以只需要学习第一节课,named一堂課搞懂生成式人工智慧的技術突破與未來發展，这节课听的幽默而又有意思，可惜的是这门课的后续其实并不适合小白，还是有点吃力的。这个章节的目的是让同学们意识到AI对当下程序的冲击力，我们的课程也要适应这个潮流，但如果纯AI，不禁发问:真正属于我们的能力有多少？
 
-# 常用人工智能
+## 常用人工智能
 因为部分国外AI可能存在国内访问限制，故放在国内AI后面。
-## 代码
+### 代码
 * DeepSeek（大模型）
 深度求索旗下，推理与逻辑能力强。不同于智能体，大模型不能在IDE里直接写入文件，所有代码需要你自己复制。  
 [https://www.deepseek.com/](https://www.deepseek.com/)
@@ -31,7 +31,7 @@ OpenAI旗下，一度成为AI代名词，处理复杂问题能力强。
 * Gemini
 Google旗下，背靠谷歌，实力强大，编码逻辑能力非常强。  
 [https://gemini.google.com/](https://gemini.google.com/)
-## 日常
+### 日常
 * DeepSeek
 深度求索旗下，推理与逻辑能力强。在中文AI中有较强实力。多模态能力较弱。   
 [https://www.deepseek.com/](https://www.deepseek.com/)
@@ -70,7 +70,7 @@ Google旗下，背靠谷歌，实力强大，依旧全能型选手。
 * mistral
 欧洲的AI大模型。  
 [https://mistral.ai/](https://mistral.ai/)
-## 图像生成
+### 图像生成
 * 商汤秒画  
 [https://miaohua.sensetime.com/](https://miaohua.sensetime.com/)
 * 即梦  
@@ -106,7 +106,7 @@ Google旗下，背靠谷歌，实力强大，依旧全能型选手。
 [https://pai.video/](https://pai.video/)
 * Sora  
 [https://openai.com/zh-Hans-CN/index/sora/](https://openai.com/zh-Hans-CN/index/sora/)
-## 学习与创作
+### 学习与创作
 * Manus
 生成PPTAI，这个强度比kimi强的不止一点，做ppt全靠这个，力推。
 [https://manus.im/app](https://manus.im/app)
@@ -163,20 +163,20 @@ PPT生成AI。
 * AI产品库
 [https://aiproducthub.cn/](https://aiproducthub.cn/)
 
-# 常见AI模型类型
-## 什么是模型
+## 常见AI模型类型
+### 什么是模型
 模型就像是人的大脑，不同的模型使用不同的训练方式、训练数据来达到不同的特点、目的。而Agent则是像人的身体，在大脑的驱动下可以干各种事情。上文提到的智能体一般可以调用不同大模型，比如cursor可以选用Claude，Gemini等模型。Agent和大模型在一起就是我们日常使用的AI工具。下面的简图大致概括了AI工具的工作流程。
 ![](AI.png "AI")  
 如果对相关内容感兴趣，可以看一下这个视频  
 [https://www.bilibili.com/video/BV1ojfDBSEPv/](https://www.bilibili.com/video/BV1ojfDBSEPv/)
 讲的比较易懂。
-## 大语言模型（LLM） 
+### 大语言模型（LLM） 
 LLM是基于海量文本数据训练的大型神经网络模型，简单来说，他只能根据用户输入的提示词（prompt）以及大量训练的数据来推测输出内容，只会不断输出内容。我们日常见到的大多数是LLM，如GPT-4.5，DeepSeekV3。
 
-## 潜在一致性模型（LCM） 
+### 潜在一致性模型（LCM） 
 LCM主要用于图像生成，具有快速生成高质量图像的能力。它优化了速度和效率，适合在移动设备或低功耗硬件上运行。
 
-## 专家混合模型（MoE） 
+### 专家混合模型（MoE） 
 MoE由多个“专家”模型组成，每个专家专注于特定领域。通过智能路由机制，MoE能够高效处理复杂任务，常用于高性能AI系统、领域助手和多语言系统。
 GPT-4，DeepSeek V3都使用了这项技术。实现高性能而节省算力。
 ## 视觉语言模型（VLM） 

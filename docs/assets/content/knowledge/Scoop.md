@@ -1,4 +1,6 @@
-# Scoop 
+﻿# Scoop 
+
+<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 ### 为什么使用Scoop
 
@@ -37,3 +39,5 @@ irm get.scoop.sh -outfile 'install.ps1'
   </a>
 </div>
 <!-- NAV-CARDS:END -->
+
+

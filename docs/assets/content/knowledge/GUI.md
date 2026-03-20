@@ -1,4 +1,6 @@
-# 图形化界面
+﻿# 图形化界面
+
+<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 ### 是什么
 
@@ -19,3 +21,5 @@
 | C++ | `QT` / `wxWidgets` / `MFC` |
 | Python | `Tkinter` / `PyQt` / `Kivy` |
 | Java | `Swing` / `JavaFX` |
+
+

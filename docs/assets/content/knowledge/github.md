@@ -1,4 +1,6 @@
-# github
+﻿# github
+
+<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 ### 是什么
 
@@ -73,3 +75,5 @@ github提交代码需要先搞秘钥，可以参考下面的文章,当然之前g
   </a>
 </div>
 <!-- NAV-CARDS:END -->
+
+

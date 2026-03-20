@@ -1,0 +1,382 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Knowledge 全量 3D 图谱</title>
+  <style>
+    :root {
+      --bg-a: #071824;
+      --bg-b: #0e2f3a;
+      --panel: rgba(6, 19, 29, 0.8);
+      --line: rgba(119, 176, 201, 0.35);
+      --text: #ecf7ff;
+      --muted: #b4cadb;
+      --cmd: #53d8c0;
+      --tool: #73a8ff;
+      --concept: #f3a34b;
+      --hub: #ff6f61;
+      --dep: #f4d35e;
+      --coop: #8ad6ff;
+      --apply: #ff9f9f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      height: 100vh;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(83, 216, 192, 0.12), transparent 30%),
+        radial-gradient(circle at 85% 8%, rgba(115, 168, 255, 0.14), transparent 35%),
+        linear-gradient(150deg, var(--bg-a), var(--bg-b));
+      overflow: hidden;
+    }
+
+    #layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      height: 100vh;
+    }
+
+    #graph {
+      position: relative;
+      min-width: 0;
+    }
+
+    #tip {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(3, 11, 16, 0.66);
+      padding: 8px 10px;
+      pointer-events: none;
+    }
+
+    #panel {
+      border-left: 1px solid var(--line);
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      padding: 16px;
+      overflow: auto;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      padding: 4px 10px;
+      color: var(--muted);
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(4, 15, 23, 0.52);
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: #bfe4ff;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .open {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #07131a;
+      text-decoration: none;
+      background: linear-gradient(135deg, #7fefcf, #a9ceff);
+      padding: 7px 10px;
+      border-radius: 8px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 7px;
+    }
+
+    li {
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px currentColor;
+    }
+
+    @media (max-width: 980px) {
+      #layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(0, 1fr) 330px;
+      }
+
+      #panel {
+        border-left: none;
+        border-top: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="layout">
+    <section id="graph">
+      <div id="tip">拖拽旋转 | 滚轮缩放 | 点击节点查看文档关系</div>
+    </section>
+    <aside id="panel">
+      <h1>Knowledge 全量 3D 图谱</h1>
+      <div class="muted">已纳入 `knowledge` 下全部文档，并按「命令行」「工具类」「知识概念类」分区聚类。连线表示同类、依赖、协作和应用关系。</div>
+
+      <div class="row">
+        <span class="chip">全部文档已连接</span>
+        <span class="chip">可点击跳转原文</span>
+      </div>
+
+      <div class="card">
+        <h2 id="n-title">点击任意节点</h2>
+        <p id="n-desc">将显示该节点说明及其在知识网络中的角色。</p>
+        <a id="n-link" class="open" href="/assets/content/knowledge/算法复杂度.md" target="_blank" rel="noopener noreferrer">打开文档</a>
+      </div>
+
+      <div class="card">
+        <h2>节点图例</h2>
+        <ul>
+          <li><span class="dot" style="color:var(--hub);background:var(--hub)"></span>图谱中心/版块锚点</li>
+          <li><span class="dot" style="color:var(--cmd);background:var(--cmd)"></span>命令行类</li>
+          <li><span class="dot" style="color:var(--tool);background:var(--tool)"></span>工具类</li>
+          <li><span class="dot" style="color:var(--concept);background:var(--concept)"></span>知识概念类</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>关系图例</h2>
+        <ul>
+          <li><span class="dot" style="color:var(--line);background:var(--line)"></span>同类关系</li>
+          <li><span class="dot" style="color:var(--dep);background:var(--dep)"></span>依赖关系</li>
+          <li><span class="dot" style="color:var(--coop);background:var(--coop)"></span>协作关系</li>
+          <li><span class="dot" style="color:var(--apply);background:var(--apply)"></span>应用关系</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/3d-force-graph@1.79.0/dist/3d-force-graph.min.js"></script>
+  <script src="https://unpkg.com/three-spritetext@1.9.0/dist/three-spritetext.min.js"></script>
+  <script>
+    const nodeStyle = {
+      hub: { color: '#ff6f61', val: 13 },
+      anchor: { color: '#ff6f61', val: 10 },
+      cmd: { color: '#53d8c0', val: 7 },
+      tool: { color: '#73a8ff', val: 7 },
+      concept: { color: '#f3a34b', val: 7 }
+    };
+
+    const linkStyle = {
+      category: 'rgba(119,176,201,0.33)',
+      same: 'rgba(119,176,201,0.5)',
+      dep: '#f4d35e',
+      coop: '#8ad6ff',
+      apply: '#ff9f9f',
+      hub: 'rgba(255,111,97,0.46)'
+    };
+
+    const nodes = [
+      { id: 'Knowledge 图谱中心', group: 'hub', desc: '聚合全部 knowledge 文档，形成一张可探索的课程知识网络。', link: '/README.md', fx: 0, fy: 0, fz: 0 },
+
+      { id: '命令行类', group: 'anchor', desc: '以命令行交互为核心，强调终端、Shell 与命令执行。', fx: -210, fy: 80, fz: 70 },
+      { id: '工具类', group: 'anchor', desc: '工程开发链路中的核心工具与构建体系。', fx: 220, fy: 70, fz: -80 },
+      { id: '知识概念类', group: 'anchor', desc: '抽象知识、方法论与跨领域理解。', fx: 0, fy: -220, fz: 120 },
+
+      { id: 'CLI', group: 'cmd', desc: '命令行基础：通过文本命令控制系统。', link: '/assets/content/knowledge/CLI.md', x: -280, y: 125, z: 70 },
+      { id: 'git Bash', group: 'cmd', desc: '常用 Shell 环境，命令行操作入口。', link: '/assets/content/knowledge/bash.md', x: -250, y: 35, z: 125 },
+
+      { id: 'Git', group: 'tool', desc: '分布式版本控制系统，管理代码历史。', link: '/assets/content/knowledge/git.md', x: 170, y: 150, z: -60 },
+      { id: 'GitHub', group: 'tool', desc: '基于 Git 的协作与托管平台。', link: '/assets/content/knowledge/github.md', x: 280, y: 108, z: -40 },
+      { id: 'Make', group: 'tool', desc: '以规则驱动的自动化构建工具。', link: '/assets/content/knowledge/make.md', x: 150, y: 15, z: -145 },
+      { id: 'CMake', group: 'tool', desc: '跨平台构建配置生成工具。', link: '/assets/content/knowledge/cmake.md', x: 260, y: 10, z: -120 },
+      { id: 'g++', group: 'tool', desc: 'C++ 编译器，负责把源码编译成可执行文件。', link: '/assets/content/knowledge/g++.md', x: 242, y: 68, z: -190 },
+      { id: 'MinGW', group: 'tool', desc: 'Windows 下 GCC 工具链来源。', link: '/assets/content/knowledge/mingw.md', x: 198, y: -55, z: -162 },
+      { id: 'Scoop', group: 'tool', desc: 'Windows 命令行包管理器。', link: '/assets/content/knowledge/Scoop.md', x: 332, y: 50, z: -118 },
+
+      { id: '前端', group: 'concept', desc: '用户可见可交互的网页界面能力。', link: '/assets/content/knowledge/frontend.md', x: -28, y: -258, z: 178 },
+      { id: 'GUI', group: 'concept', desc: '图形界面交互方式，与 CLI 互补。', link: '/assets/content/knowledge/GUI.md', x: 86, y: -172, z: 142 },
+      { id: 'Markdown 语法', group: 'concept', desc: '文档表达与知识沉淀的基础语言。', link: '/assets/content/knowledge/如何写markdown.md', x: -122, y: -168, z: 106 },
+      { id: '常见AI与模型类型', group: 'concept', desc: 'AI 工具与模型认知，连接开发新范式。', link: '/assets/content/knowledge/常见AI与模型类型.md', x: 88, y: -296, z: 74 },
+      { id: '算法复杂度', group: 'concept', desc: '时间复杂度与性能思维，支撑算法与工程决策。', link: '/assets/content/knowledge/算法复杂度.md', x: -118, y: -296, z: 62 }
+    ];
+
+    const links = [
+      { source: 'Knowledge 图谱中心', target: '命令行类', type: 'hub' },
+      { source: 'Knowledge 图谱中心', target: '工具类', type: 'hub' },
+      { source: 'Knowledge 图谱中心', target: '知识概念类', type: 'hub' },
+
+      { source: '命令行类', target: 'CLI', type: 'category' },
+      { source: '命令行类', target: 'git Bash', type: 'category' },
+
+      { source: '工具类', target: 'Git', type: 'category' },
+      { source: '工具类', target: 'GitHub', type: 'category' },
+      { source: '工具类', target: 'Make', type: 'category' },
+      { source: '工具类', target: 'CMake', type: 'category' },
+      { source: '工具类', target: 'g++', type: 'category' },
+      { source: '工具类', target: 'MinGW', type: 'category' },
+      { source: '工具类', target: 'Scoop', type: 'category' },
+
+      { source: '知识概念类', target: '前端', type: 'category' },
+      { source: '知识概念类', target: 'GUI', type: 'category' },
+      { source: '知识概念类', target: 'Markdown 语法', type: 'category' },
+      { source: '知识概念类', target: '常见AI与模型类型', type: 'category' },
+      { source: '知识概念类', target: '算法复杂度', type: 'category' },
+
+      { source: 'CLI', target: 'git Bash', type: 'same' },
+      { source: 'CLI', target: 'Scoop', type: 'dep' },
+      { source: 'git Bash', target: 'Git', type: 'dep' },
+
+      { source: 'Scoop', target: 'MinGW', type: 'dep' },
+      { source: 'MinGW', target: 'g++', type: 'dep' },
+      { source: 'g++', target: 'Make', type: 'dep' },
+      { source: 'CMake', target: 'Make', type: 'same' },
+      { source: 'CMake', target: 'g++', type: 'dep' },
+
+      { source: 'Git', target: 'GitHub', type: 'coop' },
+      { source: 'Git', target: 'Markdown 语法', type: 'coop' },
+      { source: 'GitHub', target: 'Markdown 语法', type: 'coop' },
+
+      { source: '前端', target: 'GUI', type: 'apply' },
+      { source: '前端', target: 'GitHub', type: 'coop' },
+      { source: '算法复杂度', target: 'g++', type: 'apply' },
+      { source: '算法复杂度', target: '常见AI与模型类型', type: 'apply' },
+      { source: '常见AI与模型类型', target: '前端', type: 'apply' },
+      { source: 'CLI', target: 'Git', type: 'apply' },
+      { source: 'GUI', target: 'CLI', type: 'same' }
+    ];
+
+    const graph = ForceGraph3D()(document.getElementById('graph'))
+      .backgroundColor('rgba(0,0,0,0)')
+      .graphData({ nodes, links })
+      .nodeVal(n => nodeStyle[n.group].val)
+      .nodeColor(n => nodeStyle[n.group].color)
+      .nodeLabel(n => `${n.id}\n${n.desc || ''}`)
+      .linkColor(l => linkStyle[l.type] || linkStyle.same)
+      .linkOpacity(l => l.type === 'category' ? 0.25 : 0.74)
+      .linkWidth(l => l.type === 'category' ? 0.5 : 1.6)
+      .linkDirectionalParticles(l => l.type === 'category' ? 0 : 3)
+      .linkDirectionalParticleWidth(1.6)
+      .linkDirectionalParticleColor(l => linkStyle[l.type] || '#9fc3dc')
+      .nodeThreeObject(n => {
+        const group = new THREE.Group();
+
+        const radius = n.group === 'hub' ? 7.8 : (n.group === 'anchor' ? 6.4 : 4.8);
+        const sphere = new THREE.Mesh(
+          new THREE.SphereGeometry(radius, 18, 18),
+          new THREE.MeshStandardMaterial({
+            color: nodeStyle[n.group].color,
+            metalness: 0.18,
+            roughness: 0.28,
+            emissive: nodeStyle[n.group].color,
+            emissiveIntensity: 0.2
+          })
+        );
+
+        const label = new SpriteText(n.id);
+        label.color = '#e9f5ff';
+        label.textHeight = n.group === 'hub' ? 5.8 : 3.5;
+        label.fontWeight = '700';
+        label.position.set(0, radius + 5.5, 0);
+
+        group.add(sphere);
+        group.add(label);
+        return group;
+      });
+
+    graph.cooldownTicks(140);
+    graph.d3Force('charge').strength(-240);
+    graph.d3Force('link').distance(l => {
+      if (l.type === 'hub') return 110;
+      if (l.type === 'category') return 88;
+      if (l.type === 'dep') return 96;
+      return 92;
+    });
+
+    const titleEl = document.getElementById('n-title');
+    const descEl = document.getElementById('n-desc');
+    const linkEl = document.getElementById('n-link');
+
+    function showNode(n) {
+      titleEl.textContent = n.id;
+      descEl.textContent = n.desc || '暂无详细说明。';
+      if (n.link) {
+        linkEl.href = n.link;
+        linkEl.style.display = 'inline-block';
+      } else {
+        linkEl.style.display = 'none';
+      }
+    }
+
+    graph.onNodeClick(n => {
+      showNode(n);
+      const distance = 170;
+      const norm = Math.hypot(n.x || 1, n.y || 1, n.z || 1);
+      const ratio = 1 + distance / norm;
+      graph.cameraPosition(
+        { x: (n.x || 1) * ratio, y: (n.y || 1) * ratio, z: (n.z || 1) * ratio },
+        n,
+        850
+      );
+    });
+
+    graph.onNodeHover(n => {
+      document.body.style.cursor = n ? 'pointer' : 'default';
+    });
+
+    showNode(nodes[0]);
+  </script>
+</body>
+</html>
+

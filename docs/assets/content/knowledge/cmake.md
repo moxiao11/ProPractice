@@ -1,5 +1,6 @@
-# Cmake
+﻿# Cmake
 
+<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 ### 为什么要有cmake
 如果你只用 Makefile，会遇到这些问题：
@@ -30,3 +31,5 @@ Cmake比写makefile更加抽象，现阶段很多 IDE (如 Visual Studio, CLion)
   </a>
 </div>
 <!-- NAV-CARDS:END -->
+
+

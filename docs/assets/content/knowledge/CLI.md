@@ -1,4 +1,6 @@
-# 命令行
+﻿# 命令行
+
+<a href="/assets/content/3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 ### 是什么 
 
@@ -54,3 +56,5 @@ macOS / Linux 的 Terminal
   </a>
 </div>
 <!-- NAV-CARDS:END -->
+
+

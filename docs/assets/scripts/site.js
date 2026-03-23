@@ -1,11 +1,13 @@
 ﻿(function () {
   'use strict';
 
+  const HOME_DOC = '__cover__';
   const DEFAULT_DOC = 'README.md';
+  const COVERPAGE_DOC = '_coverpage.md';
   const contentEl = document.getElementById('content');
   const sidebarEl = document.getElementById('sidebar-tree');
   const searchEl = document.getElementById('site-search');
-  const docPathEl = document.getElementById('doc-path');
+  let coverpageMarkdown = null;
 
   let currentDoc = DEFAULT_DOC;
 
@@ -48,11 +50,11 @@
     if (window.location.hash && window.location.hash.startsWith('#/')) {
       return cleanDocPath(window.location.hash);
     }
-    return DEFAULT_DOC;
+    return HOME_DOC;
   }
 
   function toQueryUrl(docPath, anchor) {
-    let url = `?doc=${encodeURIComponent(docPath)}`;
+    let url = docPath === HOME_DOC ? './' : `?doc=${encodeURIComponent(docPath)}`;
     if (anchor) url += `#${anchor.replace(/^#/, '')}`;
     return url;
   }
@@ -77,6 +79,71 @@
       .replace(/```[ \t]*Powershell/g, '```powershell');
   }
 
+  function isCoverRoute(docPath) {
+    return String(docPath || '') === HOME_DOC;
+  }
+
+  function hslToRgb(h, s, l) {
+    const hue = ((h % 360) + 360) % 360;
+    const sat = Math.max(0, Math.min(100, s)) / 100;
+    const lig = Math.max(0, Math.min(100, l)) / 100;
+    const c = (1 - Math.abs(2 * lig - 1)) * sat;
+    const x = c * (1 - Math.abs((hue / 60) % 2 - 1));
+    const m = lig - c / 2;
+    let r = 0;
+    let g = 0;
+    let b = 0;
+
+    if (hue < 60) [r, g, b] = [c, x, 0];
+    else if (hue < 120) [r, g, b] = [x, c, 0];
+    else if (hue < 180) [r, g, b] = [0, c, x];
+    else if (hue < 240) [r, g, b] = [0, x, c];
+    else if (hue < 300) [r, g, b] = [x, 0, c];
+    else [r, g, b] = [c, 0, x];
+
+    return {
+      r: Math.round((r + m) * 255),
+      g: Math.round((g + m) * 255),
+      b: Math.round((b + m) * 255)
+    };
+  }
+
+  function rgbTupleString(rgb) {
+    return `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+  }
+
+  function applyRandomCoverPalette() {
+    // Keep the original gradient model but randomize a single base hue for natural harmony.
+    const baseHue = Math.floor(Math.random() * 360);
+    const c1 = hslToRgb(baseHue - 34, 64, 67);
+    const c2 = hslToRgb(baseHue + 42, 68, 71);
+    const c3 = hslToRgb(baseHue + 118, 58, 68);
+    const b1 = hslToRgb(baseHue + 10, 58, 94);
+    const b2 = hslToRgb(baseHue + 36, 66, 90);
+    const rootStyle = document.documentElement.style;
+    rootStyle.setProperty('--cover-c1', rgbTupleString(c1));
+    rootStyle.setProperty('--cover-c2', rgbTupleString(c2));
+    rootStyle.setProperty('--cover-c3', rgbTupleString(c3));
+    rootStyle.setProperty('--cover-b1', rgbTupleString(b1));
+    rootStyle.setProperty('--cover-b2', rgbTupleString(b2));
+  }
+
+  async function loadCoverpageHTML() {
+    if (coverpageMarkdown !== null) {
+      return coverpageMarkdown ? marked.parse(preprocessMarkdown(coverpageMarkdown)) : '';
+    }
+
+    try {
+      const response = await fetch(COVERPAGE_DOC, { cache: 'no-cache' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      coverpageMarkdown = await response.text();
+      return marked.parse(preprocessMarkdown(coverpageMarkdown));
+    } catch (_) {
+      coverpageMarkdown = '';
+      return '';
+    }
+  }
+
   function scrollToAnchor(anchor) {
     if (!anchor) return;
     const id = decodeURIComponent(anchor.replace(/^#/, ''));
@@ -94,14 +161,28 @@
   async function loadMarkdown(docPath, anchor, shouldPush) {
     const safeDoc = cleanDocPath(docPath);
     currentDoc = safeDoc;
-    docPathEl.textContent = safeDoc;
+    document.body.classList.toggle('is-cover-route', isCoverRoute(safeDoc));
 
     try {
+      if (isCoverRoute(safeDoc)) {
+        applyRandomCoverPalette();
+        const coverHTML = await loadCoverpageHTML();
+        contentEl.innerHTML = coverHTML ? `<section class="site-cover">${coverHTML}</section>` : '<h1>欢迎</h1>';
+        rewriteContentLinks(COVERPAGE_DOC);
+        updateActiveSidebar('');
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        if (shouldPush) {
+          history.pushState({ doc: safeDoc, anchor: anchor || '' }, '', toQueryUrl(safeDoc, anchor));
+        }
+        return;
+      }
+
       const response = await fetch(safeDoc, { cache: 'no-cache' });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       const markdown = preprocessMarkdown(await response.text());
-      contentEl.innerHTML = marked.parse(markdown);
+      const mainHTML = marked.parse(markdown);
+      contentEl.innerHTML = mainHTML;
 
       rewriteContentLinks(safeDoc);
       if (window.Prism && typeof window.Prism.highlightAllUnder === 'function') {

@@ -10,6 +10,8 @@
   - [GitHub](assets/content/knowledge/github.md)
   - [命令行](assets/content/knowledge/CLI.md)
   - [Git Bash](assets/content/knowledge/bash.md)
+  - [操作系统](assets/content/knowledge/操作系统.md)
+  - [如何写Markdown](assets/content/knowledge/如何写markdown.md)
   - [算法复杂度](assets/content/knowledge/算法复杂度.md)
   - [Make](assets/content/knowledge/make.md)
   - [Frontend](assets/content/knowledge/frontend.md)
@@ -19,6 +21,10 @@
   - [GUI](assets/content/knowledge/GUI.md)
   - [Scoop](assets/content/knowledge/Scoop.md)
   - [常见AI与模型类型](assets/content/knowledge/常见AI与模型类型.md)
+
+- 3D 图示
+  - [知识结构图](assets/content/3D/knowledge-3d-map.html)
+  - [算法复杂度图](assets/content/3D/algo-complexity-3d.html)
 - 实验文档
   - [实验概览](assets/content/lab/实验概览.md)
   - [写在前面](assets/content/lab/写在前面.md)
@@ -36,4 +42,3 @@
 - 后记
   - [后记](assets/content/postscript/后记.md)
   - [20260308](assets/content/postscript/感想.md)
-

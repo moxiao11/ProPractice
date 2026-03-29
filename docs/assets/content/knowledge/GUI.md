@@ -1,6 +1,5 @@
 ﻿# 图形化界面
 
-<a href="../3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
 
 ### 是什么
 

@@ -20,8 +20,8 @@
   <article class="bulletin-card">
    <h3>本周安排</h3>
    <p><strong>课堂内容：</strong> 介绍课程安排</p>
-   <p><strong>实验任务：</strong> 完成专项三</p>
-   <p><strong>截止时间：</strong> 待发布 </p>
+   <p><strong>实验任务：</strong> 完成专项四</p>
+   <p><strong>截止时间：</strong> 2026.4.23 </p>
   </article>
   <article class="bulletin-card">
    <h3>实验提示</h3>

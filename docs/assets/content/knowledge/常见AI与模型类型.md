@@ -1,7 +1,5 @@
 ﻿## 目录
 
-<a href="../3D/knowledge-3d-map.html" target="_blank" rel="noopener noreferrer">打开 3D 知识图谱</a>
-
 1. [常用人工智能](#常用人工智能)
 2. [常见AI模型类型](#常见ai模型类型)
 

@@ -247,6 +247,9 @@
 
       { id: '前端', group: 'concept', desc: '用户可见可交互的网页界面能力。', link: '/assets/content/knowledge/frontend.md', x: -28, y: -258, z: 178 },
       { id: 'GUI', group: 'concept', desc: '图形界面交互方式，与 CLI 互补。', link: '/assets/content/knowledge/GUI.md', x: 86, y: -172, z: 142 },
+      { id: '操作系统', group: 'concept', desc: '程序运行所依赖的系统内核与资源管理基础。', link: '/assets/content/knowledge/操作系统.md', x: -214, y: -232, z: 132 },
+      { id: '编译器与解释器', group: 'concept', desc: '解释源码如何被翻译并执行，是构建与运行链路的关键概念。', link: '/assets/content/knowledge/编译器与解释器.md', x: 205, y: -226, z: 118 },
+      { id: '程序执行过程', group: 'concept', desc: '从源代码到可执行程序的整体流程理解。', link: '/assets/content/knowledge/程序执行过程.md', x: -12, y: -348, z: 36 },
       { id: 'Markdown 语法', group: 'concept', desc: '文档表达与知识沉淀的基础语言。', link: '/assets/content/knowledge/如何写markdown.md', x: -122, y: -168, z: 106 },
       { id: '常见AI与模型类型', group: 'concept', desc: 'AI 工具与模型认知，连接开发新范式。', link: '/assets/content/knowledge/常见AI与模型类型.md', x: 88, y: -296, z: 74 },
       { id: '算法复杂度', group: 'concept', desc: '时间复杂度与性能思维，支撑算法与工程决策。', link: '/assets/content/knowledge/算法复杂度.md', x: -118, y: -296, z: 62 }
@@ -270,6 +273,9 @@
 
       { source: '知识概念类', target: '前端', type: 'category' },
       { source: '知识概念类', target: 'GUI', type: 'category' },
+      { source: '知识概念类', target: '操作系统', type: 'category' },
+      { source: '知识概念类', target: '编译器与解释器', type: 'category' },
+      { source: '知识概念类', target: '程序执行过程', type: 'category' },
       { source: '知识概念类', target: 'Markdown 语法', type: 'category' },
       { source: '知识概念类', target: '常见AI与模型类型', type: 'category' },
       { source: '知识概念类', target: '算法复杂度', type: 'category' },
@@ -283,6 +289,9 @@
       { source: 'g++', target: 'Make', type: 'dep' },
       { source: 'CMake', target: 'Make', type: 'same' },
       { source: 'CMake', target: 'g++', type: 'dep' },
+      { source: '操作系统', target: 'CLI', type: 'dep' },
+      { source: '编译器与解释器', target: 'g++', type: 'dep' },
+      { source: '程序执行过程', target: '编译器与解释器', type: 'apply' },
 
       { source: 'Git', target: 'GitHub', type: 'coop' },
       { source: 'Git', target: 'Markdown 语法', type: 'coop' },
@@ -293,6 +302,7 @@
       { source: '算法复杂度', target: 'g++', type: 'apply' },
       { source: '算法复杂度', target: '常见AI与模型类型', type: 'apply' },
       { source: '常见AI与模型类型', target: '前端', type: 'apply' },
+      { source: '程序执行过程', target: '操作系统', type: 'apply' },
       { source: 'CLI', target: 'Git', type: 'apply' },
       { source: 'GUI', target: 'CLI', type: 'same' }
     ];

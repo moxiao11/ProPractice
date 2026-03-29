@@ -11,6 +11,8 @@
   - [命令行](assets/content/knowledge/CLI.md)
   - [Git Bash](assets/content/knowledge/bash.md)
   - [操作系统](assets/content/knowledge/操作系统.md)
+  - [编译器与解释器](assets/content/knowledge/编译器与解释器.md)
+  - [程序执行过程](assets/content/knowledge/程序执行过程.md)
   - [如何写Markdown](assets/content/knowledge/如何写markdown.md)
   - [算法复杂度](assets/content/knowledge/算法复杂度.md)
   - [Make](assets/content/knowledge/make.md)
@@ -24,13 +26,10 @@
 
 - 3D 图示
   - [知识结构图](assets/content/3D/knowledge-3d-map.html)
-  - [算法复杂度图](assets/content/3D/algo-complexity-3d.html)
 - 实验文档
   - [实验概览](assets/content/lab/实验概览.md)
   - [写在前面](assets/content/lab/写在前面.md)
   - [专项知识点](assets/content/lab/专项知识点.md)
-  - [Vector Reference](assets/content/lab/vector.md)
-  - [String Reference](assets/content/lab/string.md)
 
 - 项目文档
   - [飞机大战总览](assets/content/project/FlyBattle/FlyBattle.md)

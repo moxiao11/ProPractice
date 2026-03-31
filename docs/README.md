@@ -33,7 +33,7 @@
 |-----|-----|---------| -----|----- | 
 | 第1周 | 3月5日 | 完成专题训练1（指针与内存管理） | <a href="#/assets/content/WeekKnowledge/Week1.md"> Week1知识点 </a> |<a href="./assets/content/slide/专项一习题选讲.pdf" target="_blank" rel="noopener"> 专项一讲解 </a> 
 |  | 3月12日 | 完成专题训练2（面向对象的概念及应用） | <a href="#/assets/content/WeekKnowledge/Week2.md"> Week2知识点 </a> | 
-|  | 3月19日 | 完成专题训练3（程序调试与规范） | | 
+|  | 3月19日 | 完成专题训练3（程序调试与规范） | <a href="#/assets/content/WeekKnowledge/Week3.md"> 计算器改错 </a>| 
 | 第4周 | 3月26日 | 完成专题训练4（数据结构与算法基础） |<a href="#/assets/content/WeekKnowledge/vector.md"> vector知识点 </a> <br> <a href="#/assets/content/WeekKnowledge/string.md"> string知识点 </a>| 
 |  | 课后练习 | 1. 专项训练4（数据结构与算法基础）<br>2. 哈利波特文本检索<br>3. 空战游戏 || 
 | 第5周 | 4月2日 | 银行项目简介 || 

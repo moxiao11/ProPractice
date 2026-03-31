@@ -6,6 +6,7 @@
   - [课程安排](README.md#课程安排)
   - [评分参考](README.md#评分参考)
 - 知识文档
+  - [gdb](assets/content/knowledge/gdb.md)
   - [Git](assets/content/knowledge/git.md)
   - [GitHub](assets/content/knowledge/github.md)
   - [命令行](assets/content/knowledge/CLI.md)

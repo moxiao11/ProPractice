@@ -36,7 +36,7 @@
 |  | 3月19日 | 完成专题训练3（程序调试与规范） | <a href="#/assets/content/WeekKnowledge/Week3.md"> 计算器改错 </a>| 
 | 第4周 | 3月26日 | 完成专题训练4（数据结构与算法基础） |<a href="#/assets/content/WeekKnowledge/vector.md"> vector知识点 </a> <br> <a href="#/assets/content/WeekKnowledge/string.md"> string知识点 </a>| 
 |  | 课后练习 | 1. 专项训练4（数据结构与算法基础）<br>2. 哈利波特文本检索<br>3. 空战游戏 || 
-| 第5周 | 4月2日 | 银行项目简介 || 
+| 第5周 | 4月2日 | 银行项目简介 |<a href="#/assets/content/WeekKnowledge/分文件编写程序教程.md"> 分文件编写</a>| 
 |  | 4月9日 | 哈利波特 / 空战游戏简介 || 
 |  | 4月16日 | 银行系统开发 ||
 | 第8周 | 4月23日 | 银行系统开发 | | 
